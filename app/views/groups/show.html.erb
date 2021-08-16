@@ -1,10 +1,14 @@
 <div class="col-md-12">
-    <div class="group d-flex justify-content-end">
-        <% if current_user && current_user == @group.user%>
-            <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary m-2") %>
-        <% end %>
+    <div class="container p-3">
+        <div class="d-grid d-md-flex justify-content-md-end">
+            <%= link_to("Write a Post", new_group_post_path(@group), class: "btn btn-outline-secondary")%>
+            <% if current_user && current_user == @group.user%>
+                <%= link_to("Edit", edit_group_path(@group),    class: "btn btn-primary")%>
+            <% end %>    
+        </div>
+        <h2><%= @group.title %></h2>
+        <p><%= @group.description %></p>
     </div>
-    <h2><%= @group.title %></h2>
-    <p><%= @group.description %></p>
 </div>
+
  
