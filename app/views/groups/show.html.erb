@@ -5,6 +5,14 @@
       <% if current_user && current_user == @group.user%>
           <%= link_to("Edit", edit_group_path(@group),    class: "btn btn-primary")%>
       <% end %> 
+      
+      <span>
+        <% if current_user && current_user.is_member_of?(@group)%>
+          <label class="btn btn-success" disabled>群组成员</label>
+        <% else %>
+          <label class="btn btn-warning" disabled>不是群组成员</label>
+        <% end %>
+      </span>
     </div>   
     <h2><%= @group.title %></h2>
     <p><%= @group.description %></p>
