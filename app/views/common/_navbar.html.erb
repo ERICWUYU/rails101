@@ -13,12 +13,13 @@
                   <li class=" nav-item dropdown">
                     <a class=" nav-link dropdown-toggle" href="#" id="navbarDropdown"  role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Hi!, <%= current_user.email %>
-                        <b class="caret"></b>
+            
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="dropdown-item"><%= link_to("My Groups", account_groups_path) %></li>
+                        <li class="dropdown-item"><%= link_to("My Groups", account_groups_path, class: "btn ") %></li>
+                        <li class="dropdown-item"><%= link_to("My Posts", account_posts_path, class: "btn") %></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li class="dropdown-item"> <%= link_to("退出", destroy_user_session_path, method: :delete, ) %> </li>
+                        <li class="dropdown-item"> <%= link_to("退出", destroy_user_session_path, method: :delete, class: "btn btn-sm") %> </li>
                     </ul>
                   </li>
                 <% end %>
